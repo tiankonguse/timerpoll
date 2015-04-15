@@ -7,7 +7,7 @@
 
 这里仅显示核心代码，线程相关的暂时不考虑了。  
 
-```
+```cpp
 DEMO_LOG(0);
 
 timer timer1(3.05, (void* )callback, (void *) "hello 1", 0);
@@ -21,7 +21,7 @@ sleep(5);
 DEMO_LOG(0);
 ```
 
-```
+```text
 t(39) = 1429103486
 t(43) = 1429103486
 t(45) = 1429103486
@@ -41,7 +41,7 @@ t(54) = 1429103491
 
 目标是下面的样子  
 
-```
+```cpp
 timers_poll my_timers(128);
 
 my_timers.add(3.05, (void* )callback, (void *) "hello 1", 0);
@@ -53,13 +53,13 @@ my_timers.add(3.05, (void* )callback, (void *) "hello 1", 0);
 
 那就是下面的样子  
 
-```
+```cpp
 my_timers.add(3.05, (void* )callback, (void *) "hello 1", 0);
 ```
 
 如果支持动态生成函数的话，就是这个样子了。  
 
-```
+```javascript
 setTimeout(function(){
     string data = "hello 1";    
 }, 3.05)
