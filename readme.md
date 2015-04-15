@@ -5,7 +5,7 @@
 
 ## 使用说明
 
-具体可以参考 [demo][demo/demo.cpp]。
+具体可以参考 [demo](demo/demo.cpp)。
 
 ## 不足
 
