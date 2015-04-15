@@ -5,6 +5,33 @@
 
 ## 使用说明
 
+这里仅显示核心代码，线程相关的暂时不考虑了。  
+
+```
+DEMO_LOG(0);
+
+timer timer1(3.05, (void* )callback, (void *) "hello 1", 0);
+timer timer2(4.10, (void* )callback, (void *) "hello 2", 0);
+DEMO_LOG(0);
+my_timers.timers_poll_add_timer(&timer1);
+DEMO_LOG(0);
+my_timers.timers_poll_add_timer(&timer2);
+DEMO_LOG(0);
+sleep(5);
+DEMO_LOG(0);
+```
+
+```
+t(39) = 1429103486
+t(43) = 1429103486
+t(45) = 1429103486
+t(47) = 1429103486
+timer id=4:hello 1
+timer id=5:hello 2
+t(49) = 1429103491
+t(54) = 1429103491
+```
+
 具体可以参考 [demo](demo/demo.cpp)。
 
 ## 不足
